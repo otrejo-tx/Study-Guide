@@ -2,7 +2,7 @@
 
 **1)** BST Structure
 
-```C++
+```python
 struct treeNode //now defining
 	{
 		int _key;
