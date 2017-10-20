@@ -94,3 +94,31 @@ void BST::inorder(pTreeNode tree)
 }
 
 ```
+
+**4)** Delete
+
+```C++
+void BST::TreeDelete(Node *& root, int x)
+{
+	if (root != nullptr)
+	{
+		Node * tempPtr; Node * predPtr;
+		if (x < root->val)
+			TreeDelete(root->left, x);
+		else if (x > root->val)
+			TreeDelete(root->right, x);
+		else
+		{
+			// we have found it so lets delete it
+			// tree points at it right!?
+			// If No children we just delete it
+			if (root->left == nullptr && root->right == NULL)
+			{
+				delete(root);
+				root = nullptr; // what happens when we
+				return;       // return here! important!
+			}
+		}
+	}
+}
+```
