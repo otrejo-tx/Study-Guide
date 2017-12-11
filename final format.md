@@ -17,8 +17,7 @@
 ### Linked List
 
 - Structure
-	- ```c++
-	class LinkedList
+	- ```c++ class LinkedList
 	{
 	  struct Node {
 		int _val;
