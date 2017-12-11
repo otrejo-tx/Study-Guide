@@ -17,7 +17,7 @@
 ### Linked List
 
 - Structure
-```c++ 
+  -```c++ 
 class LinkedList
 {
   struct Node {
@@ -38,7 +38,6 @@ class LinkedList
   void print(int n);
 };
 ```
-
 
 ### Big O
 
