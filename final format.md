@@ -38,6 +38,19 @@ class LinkedList
   void print(int n);
 };
 ```
+- Clear()
+```c++
+void SSList::Clear(){
+  Node * follow = Headerptr -> next;
+  for (int i = 0; i < size; i++){
+    Headerptr = follow -> next;
+    delete follow;
+    follow = Headerptr;
+  }
+  LastNodeptr = Headerptr;
+  follow = nullptr;
+}
+```
 
 ### Big O
 
