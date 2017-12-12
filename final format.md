@@ -92,5 +92,46 @@ void SSList::Clear(){
 - f
 
 ```c++
+BFS(G, s) {
+    initialize vertices;
+    Q = {s};		// Q is a queue (duh); initialize to s
+    while (Q not empty) {    
+        u = RemoveTop(Q);
+        for each v  u->adj {
+            if (v->color == WHITE)
+                v->color = GREY;
+                v->d = u->d + 1;
+                v->p = u;
+                Enqueue(Q, v);
+        }
+        u->color = BLACK;
+    }
+}
+```
+```c++
+vector<int> Graph::BFS(int vertex)
+{
+	int u;
+	queue<int> Q;
 
+	Color.resize(G.size()); // Resize to number of Vertices
+	for (int i = 0; i < Color.size(); i++)//initialize every vertex with WHITE
+		Color[i] = WHITE;
+
+	vector<int> Parent(G.size(), -1);
+	Q.push(vertex);
+
+	while (!Q.empty()) {
+		u = Q.front(); Q.pop();
+
+		for (auto v : G[u])
+			if (Color[v.first] == WHITE) {
+				Color[v.first] = GREY; // If visted sets color to GREY
+				Parent[v.first] = u;
+				Q.push(v.first);
+			}
+		Color[u] = BLACK; // After fully explored color to BLACK
+	}
+	return Parent;
+}
 ```
