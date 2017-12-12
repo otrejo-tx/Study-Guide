@@ -135,3 +135,15 @@ vector<int> Graph::BFS(int vertex)
 	return Parent;
 }
 ```
+```c++
+void Graph::DFS_Visit(int edge, vector<int>& visited)
+{
+	visited.push_back(edge);
+	Color[edge] = GREY; // If visted sets color to GREY
+	for (auto v : G[edge]) { //Visit each edge in vertex
+		if (Color[v.first] == WHITE)
+			DFS_Visit(v.first, visited);
+	}
+	Color[edge] = BLACK;// After fully explored color to BLACK
+}
+```
