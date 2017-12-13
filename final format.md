@@ -147,3 +147,18 @@ void Graph::DFS_Visit(int edge, vector<int>& visited)
 	Color[edge] = BLACK;// After fully explored color to BLACK
 }
 ```
+```C++
+class BST
+{
+	int size = 0;//number of values in tree and in vector;
+
+	struct treeNode
+	{
+		int key;
+		treeNode * left;
+		treeNode * right;
+		treeNode(int k) : key(k), left(nullptr), right(nullptr) {}
+	};
+	treeNode * root;
+};
+```
