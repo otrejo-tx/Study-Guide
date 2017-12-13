@@ -172,3 +172,12 @@ void BST::inorder(pTreeNode tree)
 	}
 }
 ```
+```c++
+int BST::iplAux(pTreeNode & leaf, int depth)
+{
+	if (leaf == nullptr)
+		return 0;
+		return depth + iplAux(leaf->_left, depth + 1) + iplAux(leaf->_right, depth + 1);
+
+}
+```
