@@ -162,3 +162,13 @@ class BST
 	treeNode * root;
 };
 ```
+```c++
+void BST::inorder(pTreeNode tree)
+{
+	if (tree != nullptr){
+		inorder(tree->_left);
+		cout << tree->_key << endl;
+		inorder(tree->_right);
+	}
+}
+```
